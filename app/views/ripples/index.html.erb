@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ripples</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Message</th>
+      <th>Posted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ripples.each do |ripple| %>
+      <tr>
+        <%if ripple.website.nil?%>   
+        <td><%= ripple.name %></td>       
+       <%else %>
+         <td><a href="//<%=ripple.website%>"><%= ripple.name %></a></td>
+       <%end%>
+        <td class= "tdMessage"><%= ripple.message %></td>
+        <td><%= ripple.created_at %></td>
+
+        <td><%= link_to 'Show', ripple %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Newest', ripples_path(page: 0) %>
+<%= link_to 'Previous 10 Ripples', ripples_path(page: @prev_page_num) %>
+<%= link_to 'Next 10 Ripples', ripples_path(page: @next_page_num) %>
+<%= link_to 'Oldest', ripples_path(page: @oldest_page_num) %>
+<%= link_to 'New Ripple', new_ripple_path %>
