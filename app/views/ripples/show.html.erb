@@ -1,24 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+
    <%if @ripple.website.nil?%>
-       <%= @ripple.name %>
+       <%= @ripple.name %> said:
        <%else %>
-         <a href="//<%=@ripple.website%>"><%= @ripple.name %></a>
+         <a href="//<%=@ripple.website%>"><%= @ripple.name %></a> said:
        <%end%>
 
 </p>
 
 <p>
-  <strong>Website:</strong>
-  <%= @ripple.website %>
-</p>
-
-<p>
-  <strong>Message:</strong>
+  
   <%= @ripple.message %>
 </p>
 
-<%= link_to 'Edit', edit_ripple_path(@ripple) %> |
+
 <%= link_to 'Back', ripples_path %>

@@ -1,4 +1,4 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSe
 
 one:
   name: MyString
@@ -9,3 +9,11 @@ two:
   name: MyString
   website: MyString
   message: MyString
+
+
+<% 25.times do |i| %>
+ripple_<%= i %>:
+   name: <%= "user#{i}" %>
+   website: <%= "user#{i}" %>
+   message: <%= "user#{i}" %>
+<% end %>

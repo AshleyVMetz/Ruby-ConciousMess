@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label "Your name or alias (required)" %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :website %>
+    <%= form.label "A website, yours or otherwise (optional)" %>
     <%= form.text_field :website %>
   </div>
 
   <div class="field">
-    <%= form.label :message %>
-    <%= form.text_field :message %>
+    <%= form.label "Your message/note/quote/rant (required)" %>
+    <%= form.text_area :message, size: "30x10" %>
   </div>
 
   <div class="actions">

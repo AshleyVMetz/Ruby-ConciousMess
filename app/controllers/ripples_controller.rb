@@ -1,14 +1,29 @@
 class RipplesController < ApplicationController
   PAGE_SIZE = 10
+  protect_from_forgery
   before_action :set_ripple, only: [ :show, :edit, :update, :destroy]
 
   # GET /ripples
   # GET /ripples.json
   def index
-    page_num = params.fetch( :page, 0).to_i
-    @oldest_page_num = (Ripple.all.size.to_f / PAGE_SIZE).ceil - 1    
-    @prev_page_num = [page_num - 1, 0].max
-    @next_page_num = [page_num + 1, @oldest_page_num].min
+    page_param = params.fetch( :page, nil)
+    oldest_page_num = (Ripple.all.size.to_f / PAGE_SIZE).ceil - 1
+    curr_page_num = session[ :curr_page_num ] || 0
+    page_num = nil
+    
+    if page_param == "newest"
+       page_num = 0
+    elsif page_param == "prev"
+       page_num = [curr_page_num - 1, 0].max
+    elsif page_param == "next"
+       page_num = [curr_page_num + 1, oldest_page_num].min
+    elsif page_param == "oldest"
+       page_num = oldest_page_num
+    else 
+       page_num = curr_page_num
+    end
+
+    session[ :curr_page_num] = page_num
     @ripples = Ripple.order(created_at: :desc).offset(PAGE_SIZE * page_num).limit(PAGE_SIZE)
    end
 
@@ -34,7 +49,7 @@ class RipplesController < ApplicationController
 
     respond_to do |format|
       if @ripple.save
-        format.html { redirect_to @ripple, notice: 'Ripple was successfully created.' }
+        format.html { redirect_to :ripples, notice: 'Ripple was successfully created.' }
         format.json { render :show, status: :created, location: @ripple }
       else
         format.html { render :new }
