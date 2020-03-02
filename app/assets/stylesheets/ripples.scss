@@ -1,28 +1,30 @@
 // Place all the styles related to the Ripples controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .header {
   background-color:
-#0b299f52;
-padding-top: 50px;
-padding-bottom: 50px;
-padding-left: 20px;
-color:
-white;
+  #0b299f52;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  color:
+  white;
 }
 .ripples {
   padding: 0.5em;
   table {
     table-layout: fixed;
     border-collapse: collapse;
-
+    font-size: 15px;
   }
   th {
    background-color: white;
-   
+   font-size: 20px;
   }
+
   tr:nth-child(even) {
-        background-color: #f2f2f2;
+    background-color: #f2f2f2;   
   }
    tr:nth-child(odd) {
         background-color: #b8d1f3;
@@ -33,7 +35,16 @@ white;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 150px;
+    max-width: 250px;
   }
+  
+  .showMessage {
+     font-size: 18px;
+     font-style: italic;
+     color: purple;
+     padding-left: 100px;
+       
+  }
+
  
 }
