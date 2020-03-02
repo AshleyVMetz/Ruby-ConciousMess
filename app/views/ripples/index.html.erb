@@ -14,7 +14,7 @@
   <tbody>
     <% @ripples.each do |ripple| %>
       <tr>
-        <%if ripple.website.nil?%>   
+        <%if ripple.website.nil? || ripple.website.empty?%>   
         <td><%= ripple.name %></td>       
        <%else %>
          <td><a href="//<%=ripple.website%>"><%= ripple.name %></a></td>

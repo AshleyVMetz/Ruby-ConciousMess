@@ -29,5 +29,13 @@ Ripple.create!(name: 'Mr. Bot',  message: 'I am a robot')
 Ripple.create!(name: 'BobKicker', message: 'Computer Science is awesome. We will create the machines that will destroy us lol')
 Ripple.create!(name: 'SallyJ', message: 'Wow what a great opportunity to learn all about ruby and rails!')
 Ripple.create!(name: 'Mrs. Maga', website: 'mrsmaga.com', message: 'I love purses')
+Ripple.create!(name: 'Sam', message: 'I am Sam, Sam I Am. I like green eggs and ham. I like them on a fox, I like them in a box. I like them on a train. I like them in the rain. Sam I am.')
+Ripple.create!(name: 'Harry', website: 'potter.com', message: 'I fight for what is right')
+Ripple.create!(name: 'Snape', message: 'Mr. Potter')
+Ripple.create!(name: 'Hermoine', message: 'I love books. I love magic')
+Ripple.create!(name: 'Ron',  message: 'I hate spiders.')
+Ripple.create!(name: 'Dumbledore', message: 'Light always defeats dark')
+Ripple.create!(name: 'Luna', message: 'I may be strange but at least I am happy')
+Ripple.create!(name: 'Ginny', website: 'mrsmaga.com', message: 'I love Harry')
 
 
