@@ -11,6 +11,7 @@
   color:
   white;
 }
+
 .ripples {
   padding: 0.5em;
   table {
@@ -39,12 +40,35 @@
   }
   
   .showMessage {
-     font-size: 18px;
-     font-style: italic;
-     color: purple;
-     padding-left: 100px;
-       
+    font-size: 18px;
+    font-style: italic;
+    color: purple;
+    padding-left: 100px;       
   }
 
+  .field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+  label {
+  display: block;
+  margin: 10px;
+  }
+  
+  input {
+  margin: 10px;
+  }
+
+  actions {
+  margin: 10px;
+  }
+
+  textarea {
+  margin: 10px;
+  width: 300px;
+  height: 150px;  
+}  
  
 }
